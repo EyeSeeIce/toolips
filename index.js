@@ -50,28 +50,26 @@ function ToolTip(options) {
             console.log(options.vector)
             switch (options.vector) {
                 case "top":
-                    if (y - h < 0){
+                    if (y - h < 0) {
                         return {
                             left: `${x}px`,
                             top: `${y + height}px`
                         }
-                    }else{
+                    } else {
                         return {
                             left: `${x}px`,
-                            top: `${y - h+height/2}px`
+                            top: `${y - h + height / 2}px`
                         }
                     }
-                    return {
-
-                    }
+                    return {}
                 case 'left':
-                    if (x - w < 0){
-                        console.log(x+w)
+                    if (x - w < 0) {
+                        console.log(x + w)
                         return {
                             left: `${x + width}px`,
                             top: `${y - height / 2}px`,
                         }
-                    }else{
+                    } else {
                         console.log(w)
                         return {
                             left: `${x - w}px`,
@@ -79,12 +77,12 @@ function ToolTip(options) {
                         }
                     }
                 case 'right':
-                    if (x + w > windowWidth){
+                    if (x + w > windowWidth) {
                         return {
                             left: `${x}px`,
                             top: `${y + height}px`
                         }
-                    }else{
+                    } else {
                         return {
                             left: `${x + width}px`,
                             top: `${y - height / 2}px`,
@@ -118,20 +116,33 @@ function ToolTip(options) {
 }
 
 
-let tl = ToolTip({
-    place: '#_tooltipCheck',
-    vector: 'right',
-    text: 'Приветули',
-    targetStyle: {
-        textDecoration: 'underline'
+ToolTip({ //Вызываем функцию и передаем объект
+    place: '#_tooltipCheck', //Элемент, на который нужно вешать подсказку
+    vector: 'right', //С какой стороны будет подсказка 'left' 'right' 'top' 'bottom'
+    text: `<div><a id="_link" href="">Привет</a></div>`, //Верстка подсказки, можно использовать просто текст
+    handlers: {  //События на элементы подсказки
+        place: '#_link', //Элемент, на который нужно повесить событие
+        eventType: 'click', //Тип события
+        handler: function (e) { //Функция
+            e.preventDefault()
+            console.log('Сработало событие')
+        }
     },
-    style: {
-        background: 'yellow',
-        fontSize: '30px',
-        width: '200px',
-        height: '200px',
+    targetStyle: { //Стили для самого элемента, на котором будет подсказка
+        textDecoration: 'underline',
+        fontWeight: '600'
+    },
+    style: { //Стили самой подсказки
+        background: 'rgba(55,55,55,.85)',
+        color: '#fff',
+        fontSize: '15px',
+        letterSpacing: '2px',
+        width: '100px',
+        height: '50px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
     }
 })
+
+
