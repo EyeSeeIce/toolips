@@ -43,7 +43,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611090954093</updated>
-      <workItem from="1611090955165" duration="6545000" />
+      <workItem from="1611090955165" duration="6947000" />
     </task>
     <task id="LOCAL-00001" summary="Create README file">
       <created>1611094225489</created>
@@ -73,7 +73,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611131484872</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Update README.md">
+      <created>1611132091301</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1611132091301</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,9 +148,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1345" height="87" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1611096486979" />
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1611131487774">
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1611132094129">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1611131487774" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1611132094129" />
   </component>
 </project>
