@@ -16,7 +16,7 @@
 <p>Lorem <span id="_tooltipCheck">HoverMe!</span> ipsum dolor sit <span id="tooltip">Привет</span>, consectetur adipisicing <span id="tooltip2">Еще привет</span>. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, odit.  perspiciatis quod tempore?</p>
 ```
 
-###### Так,я вижу в нашем html какой-то спан с id - _tooltipCheck, наверняка он тут не просто так! Заглянука я JS файл мой
+###### Так,я вижу в нашем html какой-то спан с id - _tooltipCheck, наверняка он тут не просто так! Заглянука я мой JS файл
 
 ```js
 ToolTip({ //Вызываем функцию и передаем объект
@@ -49,4 +49,11 @@ ToolTip({ //Вызываем функцию и передаем объект
 })
 
 ```
+---
+### Доступные опции
 
+Опция | Тип данных | Описание 
+------|------------| ------
+place | String   | Указывается селектор слова, на которое нужно применить подсказку
+vector| String   | Указание скоторы, с которой будет появляться подсказка (left, right, top, button)
+text  | String   | Текст, который будет наполнять подсказку. Можно использовать верстку и шаблонные строки
