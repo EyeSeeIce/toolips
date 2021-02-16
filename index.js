@@ -37,13 +37,11 @@ function ToolTip(options) {
     })
 
     const methods = {
-        getVecor(e) {
+        getVector(e) {
             let x = word.getBoundingClientRect().x
             let y = word.getBoundingClientRect().y
             let height = word.getBoundingClientRect().height
             let width = word.getBoundingClientRect().width
-            let toolTipWidth = $tool.offsetWidth
-            let toolTipHeight = $tool.offsetHeight
             let windowWidth = window.innerWidth
             let w = +$tool.style['width'].replace('px', '')
             let h = +$tool.style['height'].replace('px', '')
@@ -58,10 +56,9 @@ function ToolTip(options) {
                     } else {
                         return {
                             left: `${x}px`,
-                            top: `${y - h + height / 2}px`
+                            top: `${h-height}px`
                         }
                     }
-                    return {}
                 case 'left':
                     if (x - w < 0) {
                         console.log(x + w)
@@ -70,7 +67,6 @@ function ToolTip(options) {
                             top: `${y - height / 2}px`,
                         }
                     } else {
-                        console.log(w)
                         return {
                             left: `${x - w}px`,
                             top: `${y - height / 2}px`,
@@ -103,7 +99,7 @@ function ToolTip(options) {
 
         },
         open(e) {
-            Object.assign($tool.style, methods.getVecor(e))
+            Object.assign($tool.style, methods.getVector(e))
             word.append($tool)
             document.querySelector('body').style.overflowX = 'hidden'
         },
@@ -118,10 +114,10 @@ function ToolTip(options) {
 
 ToolTip({ //Вызываем функцию и передаем объект
     place: '#_tooltipCheck', //Элемент, на который нужно вешать подсказку
-    vector: 'right', //С какой стороны будет подсказка 'left' 'right' 'top' 'bottom'
-    text: `<div><a id="_link" href="">Привет</a></div>`, //Верстка подсказки, можно использовать просто текст
+    vector: 'left', //С какой стороны будет подсказка 'left' 'right' 'top' 'bottom'
+    text: `<a href="#" id="link">click</a>`, //Верстка подсказки, можно использовать просто текст
     handlers: {  //События на элементы подсказки
-        place: '#_link', //Элемент, на который нужно повесить событие
+        place: '#link', //Элемент, на который нужно повесить событие
         eventType: 'click', //Тип события
         handler: function (e) { //Функция
             e.preventDefault()
